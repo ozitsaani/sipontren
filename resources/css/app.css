@@ -1,0 +1,268 @@
+@import "tailwindcss";
+
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../../storage/framework/views/*.php";
+@source "../**/*.blade.php";
+@source "../**/*.js";
+
+/*
+|--------------------------------------------------------------------------
+| SIPontren Global Style
+|--------------------------------------------------------------------------
+| Versi ini aman untuk Tailwind v4 + composer run dev.
+| Jangan pakai @apply di file ini.
+*/
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: "Public Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #ffffff;
+    color: #191c1e;
+}
+
+/* Background pattern utama SIPontren */
+.sip-pattern-bg {
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23004199' fill-opacity='0.035'%3E%3Cpath d='M14 0l14 14-14 14L0 14z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 28px 28px;
+}
+
+/* Card */
+.sip-card {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+
+.sip-card-padding {
+    padding: 1.25rem;
+}
+
+@media (min-width: 640px) {
+    .sip-card-padding {
+        padding: 1.5rem;
+    }
+}
+
+/* Page wrapper */
+.sip-page-wrapper {
+    width: 100%;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sip-page-wrapper > * + * {
+    margin-top: 1.25rem;
+}
+
+@media (min-width: 640px) {
+    .sip-page-wrapper {
+        max-width: none;
+    }
+
+    .sip-page-wrapper > * + * {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .sip-page-wrapper {
+        max-width: 1280px;
+    }
+}
+
+/* Input */
+.sip-input {
+    width: 100%;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    color: #1e293b;
+    font-size: 0.875rem;
+}
+
+.sip-input::placeholder {
+    color: #94a3b8;
+}
+
+.sip-input:focus {
+    outline: none;
+    border-color: #004199;
+    box-shadow: 0 0 0 1px #004199;
+}
+
+@media (min-width: 640px) {
+    .sip-input {
+        font-size: 1rem;
+    }
+}
+
+/* Buttons */
+.sip-btn-primary,
+.sip-btn-dark,
+.sip-btn-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition-property: color, background-color, border-color, box-shadow, transform;
+    transition-duration: 150ms;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+@media (min-width: 640px) {
+    .sip-btn-primary,
+    .sip-btn-dark,
+    .sip-btn-light {
+        font-size: 1rem;
+    }
+}
+
+.sip-btn-primary {
+    background-color: #004199;
+    color: #ffffff;
+}
+
+.sip-btn-primary:hover {
+    background-color: #00377f;
+}
+
+.sip-btn-dark {
+    background-color: #001847;
+    color: #ffffff;
+}
+
+.sip-btn-dark:hover {
+    background-color: #002b70;
+}
+
+.sip-btn-light {
+    background-color: #f1f5f9;
+    color: #334155;
+}
+
+.sip-btn-light:hover {
+    background-color: #e2e8f0;
+}
+
+/* Badges */
+.sip-badge-active,
+.sip-badge-muted,
+.sip-badge-danger {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.sip-badge-active {
+    background-color: #dff5a6;
+    color: #4a5f00;
+    border-color: #cdeb7c;
+}
+
+.sip-badge-muted {
+    background-color: #f1f5f9;
+    color: #475569;
+    border-color: #e2e8f0;
+}
+
+.sip-badge-danger {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-color: #fecaca;
+}
+
+/* Table card */
+.sip-table-card {
+    display: none;
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+
+@media (min-width: 768px) {
+    .sip-table-card {
+        display: block;
+    }
+}
+
+.sip-table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.sip-table thead tr {
+    background-color: #001847;
+    color: #ffffff;
+    font-size: 0.875rem;
+}
+
+.sip-table th {
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+}
+
+.sip-table td {
+    padding: 1rem 1.5rem;
+}
+
+.sip-table tbody tr {
+    border-bottom: 1px solid #f1f5f9;
+    transition: background-color 150ms ease;
+}
+
+.sip-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Mobile card */
+.sip-mobile-card {
+    display: block;
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    border: 1px solid #e2e8f0;
+    padding: 1.25rem;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+
+@media (min-width: 768px) {
+    .sip-mobile-card {
+        display: none;
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8;
+}

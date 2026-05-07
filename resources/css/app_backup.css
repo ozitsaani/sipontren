@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Public Sans', sans-serif;
+        background-color: #ffffff;
+        color: #191C1E;
+    }
+}
+
+@layer components {
+    .sip-pattern-bg {
+        background-color: #ffffff;
+        background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23004199' fill-opacity='0.035'%3E%3Cpath d='M14 0l14 14-14 14L0 14z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-size: 28px 28px;
+    }
+
+    .sip-card {
+        @apply bg-white rounded-3xl border border-slate-200 shadow-[0_10px_28px_rgba(15,23,42,0.07)];
+    }
+
+    .sip-card-padding {
+        @apply p-5 sm:p-6;
+    }
+
+    .sip-page-wrapper {
+        @apply mx-auto w-full max-w-[350px] sm:max-w-none lg:max-w-[1280px] space-y-5 sm:space-y-6;
+    }
+
+    .sip-input {
+        @apply w-full bg-[#F8FAFC] border border-slate-200 rounded-2xl text-sm sm:text-base text-slate-800 focus:outline-none focus:border-[#004199] focus:ring-1 focus:ring-[#004199] placeholder:text-slate-400;
+    }
+
+    .sip-btn-primary {
+        @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#004199] text-white rounded-2xl text-sm sm:text-base font-semibold hover:bg-[#00377F] transition-colors shadow-sm;
+    }
+
+    .sip-btn-dark {
+        @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#001847] text-white rounded-2xl text-sm sm:text-base font-semibold hover:bg-[#002B70] transition-colors shadow-sm;
+    }
+
+    .sip-btn-light {
+        @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-100 text-slate-700 rounded-2xl text-sm sm:text-base font-semibold hover:bg-slate-200 transition-colors;
+    }
+
+    .sip-badge-active {
+        @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-[#DFF5A6] text-[#4A5F00] border border-[#CDEB7C];
+    }
+
+    .sip-badge-muted {
+        @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-200;
+    }
+
+    .sip-badge-danger {
+        @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700 border border-red-200;
+    }
+
+    .sip-table-card {
+        @apply hidden md:block bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-[0_10px_28px_rgba(15,23,42,0.07)];
+    }
+
+    .sip-table {
+        @apply w-full text-left border-collapse;
+    }
+
+    .sip-table thead tr {
+        @apply bg-[#001847] text-white text-sm;
+    }
+
+    .sip-table th {
+        @apply py-4 px-6 font-semibold;
+    }
+
+    .sip-table td {
+        @apply py-4 px-6;
+    }
+
+    .sip-table tbody tr {
+        @apply hover:bg-[#F8FAFC] transition-colors border-b border-slate-100;
+    }
+
+    .sip-mobile-card {
+        @apply md:hidden bg-white rounded-3xl border border-slate-200 p-5 shadow-[0_10px_28px_rgba(15,23,42,0.07)];
+    }
+}
